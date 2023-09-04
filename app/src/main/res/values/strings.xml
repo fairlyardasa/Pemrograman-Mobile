@@ -1,8 +1,4 @@
 <resources>
     <string name="app_name">PertemuanDua</string>
-    <string name="username">Username : </string>
-    <string name="btn_Login">Log In</string>
-    <string name="password">Password : </string>
-    <string name="h_username">Masukkan Username</string>
-    <string name="h_pass">Masukkan Password</string>
+    <string name="_0">0</string>
 </resources>

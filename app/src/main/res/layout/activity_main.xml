@@ -1,84 +1,315 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:padding="16dp"
     tools:context=".MainActivity"
-    android:background="#BFDBFE">
+    android:padding="20dp"
+    android:background="#242B26">
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#2B352E"
+    android:padding="6dp"
+    android:id="@+id/lyt_numbers"
+    >
+
 
     <TextView
-
-        android:layout_marginTop="160dp"
-        android:layout_marginBottom="80dp"
-        android:id="@+id/txt_Login"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
-        android:textAlignment="center"
+        android:id="@+id/txt_number"
+        android:text="Number"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/txt_firstNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_number"
+        android:text="0"
         android:textSize="40sp"
-        android:textColor="@color/black"/>
+        android:textColor="@color/white"
+        android:layout_alignParentRight="true"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/txt_opr"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:layout_below="@id/txt_firstNum"
+        android:text="..."
+        android:textSize="40sp"
+        android:textColor="@color/white"
+        android:layout_alignParentLeft="true"/>
+
+    <TextView
+        android:id="@+id/txt_secondNum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/txt_opr"
+        android:text="0"
+        android:textSize="40sp"
+        android:layout_alignParentRight="true"/>
+
+</RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/relative_hasil"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:padding="6sp"
+
+        android:layout_below="@id/lyt_numbers">
 
         <TextView
+            android:id="@+id/txt_hasil"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_Email"
-            android:text="@string/username"
-            android:textSize="18sp"/>
-        <EditText
-            android:layout_width="match_parent"
+            android:text="Hasil"
+            android:textColor="#6E8173"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+        <TextView
+            android:id="@+id/txt_result"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/edt_Username"
-            android:textSize="18sp"
-            android:hint="@string/h_username"
+            android:text="0"
+            android:textSize="60sp"
+            android:textColor="@color/yellow"
+            android:layout_alignParentRight="true"/>
+
+
+
+
+
+
+    </RelativeLayout>
+    <LinearLayout
+        android:id="@+id/linear_1"
+        android:layout_marginTop="60dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/relative_hasil"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/num_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:padding="10dp"
+            android:backgroundTint="@color/black"
+            android:onClick="inputNum"
             />
-
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <TextView
+        <Button
+            android:id="@+id/num_2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/txt_Pass"
-            android:text="@string/password"
-            android:textSize="18sp"/>
-        <EditText
-            android:layout_width="match_parent"
+            android:text="2"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:padding="10dp"
+            android:backgroundTint="@color/black"
+            android:onClick="inputNum"
+            />
+        <Button
+            android:id="@+id/num_3"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/edt_Password"
-            android:hint="@string/h_pass"/>
+            android:text="3"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:padding="10dp"
+            android:backgroundTint="@color/black"
+            android:onClick="inputNum"
+            />
+        <Button
+            android:id="@+id/opr_multiply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="*"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:padding="10dp"
+            android:backgroundTint="@color/grey"
+            android:onClick="operatorProcess"
+            />
     </LinearLayout>
-
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_marginTop="40dp"
+    <LinearLayout
+        android:id="@+id/linear_2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/btn_Login"
-        android:textSize="18sp"
-        android:textAlignment="center"
-        android:backgroundTint="@android:color/black"
-        />
-
-
-
-
-
-
-
-
-
-
-
-</LinearLayout>
+        android:layout_below="@id/linear_1"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/num_4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="4"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:padding="10dp"
+            android:backgroundTint="@color/black"
+            android:onClick="inputNum"
+            />
+        <Button
+            android:id="@+id/num_5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:padding="10dp"
+            android:backgroundTint="@color/black"
+            android:onClick="inputNum"
+            />
+        <Button
+            android:id="@+id/num_6"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="6"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:padding="10dp"
+            android:backgroundTint="@color/black"
+            android:onClick="inputNum"
+            />
+        <Button
+            android:id="@+id/opr_bagi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:padding="10dp"
+            android:backgroundTint="@color/grey"
+            android:onClick="operatorProcess"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear_3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_2"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/num_7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:padding="10dp"
+            android:backgroundTint="@color/black"
+            android:onClick="inputNum"
+            />
+        <Button
+            android:id="@+id/num_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:padding="10dp"
+            android:backgroundTint="@color/black"
+            android:onClick="inputNum"
+            />
+        <Button
+            android:id="@+id/num_9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="9"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:padding="10dp"
+            android:backgroundTint="@color/black"
+            android:onClick="inputNum"
+            />
+        <Button
+            android:id="@+id/opr_clear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:padding="10dp"
+            android:backgroundTint="@color/grey"
+            android:onClick="operatorClear"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/linear_4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/linear_3"
+        android:orientation="horizontal"
+        >
+        <Button
+            android:id="@+id/opr_minus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="-"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:padding="10dp"
+            android:backgroundTint="@color/grey"
+            android:onClick="operatorProcess"
+            />
+        <Button
+            android:id="@+id/num_0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:padding="10dp"
+            android:backgroundTint="@color/black"
+            android:onClick="inputNum"
+            />
+        <Button
+            android:id="@+id/opr_plus"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="+"
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:padding="10dp"
+            android:backgroundTint="@color/grey"
+            android:onClick="operatorProcess"
+            />
+        <Button
+            android:id="@+id/opr_equal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="="
+            android:textSize="30sp"
+            android:layout_weight="1"
+            android:layout_margin="4dp"
+            android:padding="10dp"
+            android:backgroundTint="@color/grey"
+            android:onClick="operatorEqualTo"
+            />
+    </LinearLayout>
+</RelativeLayout>
