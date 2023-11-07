@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="5dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height= "120dp"
+        android:background="@drawable/rounded_box">
+
+        <ImageView
+            android:id="@+id/imgview"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="15dp"
+            android:src="@drawable/baseline_person_pin_24"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_nama"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Nama Mahasiswa"
+            android:textSize="18sp"
+            app:layout_constraintStart_toEndOf="@+id/imgview"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_nim"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="Nomor Induk Mahasiwa"
+            app:layout_constraintStart_toEndOf="@+id/imgview"
+            app:layout_constraintTop_toBottomOf="@+id/txt_nama"
+            android:fontFamily="@font/poppins_regular"/>
+
+        <TextView
+            android:id="@+id/txt_prodi"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginBottom="10dp"
+            android:text="Nama Prodi"
+            android:textColor="#747474"
+            android:fontFamily="@font/poppins_regular"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgview" />
+
+        <TextView
+            android:id="@+id/txt_ipk"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/border_box"
+            android:padding="4sp"
+            android:text="IPK 4.0"
+            android:textColor="@color/purple_200"
+            android:textSize="10sp"
+            app:layout_constraintStart_toEndOf="@+id/txt_nama"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</LinearLayout>
